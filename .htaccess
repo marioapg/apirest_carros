@@ -1,0 +1,6 @@
+Header always set Access-Control-Allow-Origin: *
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+Header always set Access-Control-Allow-Headers "*"
+RewriteEngine On
+RewriteRule ^([a-zA-Z_-]*)$ index.php?action=$1
+RewriteRule ^([a-zA-Z_-]*)/([0-9]+) index.php?action=$1&id=$2 [L,QSA]
